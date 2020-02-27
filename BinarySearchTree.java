@@ -64,6 +64,44 @@ class BinarySearchTree {
 			display(root.right);
 		}
 	}
+	
+	//Delete a node from BST : cases : 1) No childern 2) 1 child 3) 2 children
+	
+	public Node delete(int dt){
+        	if(root == null)
+           		return root;
+        	return delRec(root,dt);
+    }
+
+	// Node with 2 children : find min of right subtree (or max of left subtree) -> copy the value in the node to be deleted 
+	// then delete the duplicate node in right sub tree (or left sub tree respectively).
+    	public Node delRec(Node root,int dt){
+        	if(root.data<dt)
+            		root.right = delRec(root.right,dt);
+        	else if(root.data>dt)
+            		root.left = delRec(root.left,dt);
+        	else{
+			// To delete node with no child or 1 child
+            		if(root.left == null)
+                		return root.right;
+           		else if (root.right == null)
+                		return root.left;
+            	else {
+                	root.data = min(root.right);
+                	root.right = delRec(root.right,root.data);
+            	}
+        	}
+        	return root;
+    }
+
+    	public int min(Node root){
+        	int min = root.data;
+        	while(root.left!=null){
+            		min = root.left.data;
+            		root = root.left;
+        	}
+        	return min;
+    }
 
 }
 
