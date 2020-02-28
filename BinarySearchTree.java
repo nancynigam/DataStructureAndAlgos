@@ -102,6 +102,36 @@ class BinarySearchTree {
         	}
         	return min;
     }
+	
+		//Recursive
+	public int minR(Node root){
+		if(root == null)
+		    return -1;
+		else if(root.left==null)
+		    return root.data;
+		return minR(root.left);
+	    }
+
+	 public int max(Node root){
+		int max = root.data;
+		while(root.right!=null){
+		    max = root.right.data;
+		    root = root.right;
+		}
+		return max;
+	    }
+
+	    //Recursive
+	 public int maxR(Node root){
+		if(root == null){
+		    return -1;
+		}
+		else if(root.right==null){
+		    return root.data;
+		}
+		else return maxR(root.right);
+	    }
+
 
 }
 
