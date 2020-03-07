@@ -1,0 +1,41 @@
+/**
+ * @Date 27/08/2019
+ * @author Nancy Nigam
+ * Question : Compute the diameter of the tree. 
+ * Link : https://leetcode.com/problems/diameter-of-binary-tree/
+ * Explaination : The diameter of a binary tree is the length of the longest path between any two nodes in a tree. This path may or may not pass through the root.
+ * Clarification/Edge cases (How to handle following situations?) :  
+ *  1. If the tree is binary or not
+ * Here we have a binary tree
+ * Complexity : Time(O(n))
+**/
+
+public class DiameterOfTree {	
+/**
+ * Definition for a binary tree node.
+ * public class Node {
+ *     int data;
+ *     Node left;
+ *     Node right;
+ *     Node(int x) { val = x; }
+ * }
+ */
+    int max;
+    public int diameterOfBinaryTree(TreeNode root) {
+        if(root == null)
+            return 0;
+        max=0;
+        diameter(root);
+        return max-1;
+    }
+    //We subtract -1 from max because we have to return edges but while counting we need it as we need to include the current node as well.
+    public int diameter(TreeNode root){
+        if(root == null)
+            return 0;
+        int left = diameter(root.left);
+        int right = diameter(root.right);
+        int count = left+right+1;
+        max = Math.max(max,count);
+        return Math.max(left,right)+1;
+    }
+}
