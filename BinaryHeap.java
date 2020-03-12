@@ -1,3 +1,11 @@
+/**
+ * @Date 12/03/2020
+ * @author Nancy Nigam
+ * Question : Binary Heap Implementation
+ * Explaination : Heap is a almost complete binary tree with semi ordering component with max/min element at the top.
+ * Imp functions : getMax() , insert(), delete
+ * Complexity :    getMax : O(1) , insert : O(log(n)), delete : O(log(n))
+**/
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
