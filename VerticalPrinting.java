@@ -1,4 +1,13 @@
 /**
+ * @Date 15/03/2020
+ * @author Nancy Nigam
+ * Question : Vertical Printing of Trees
+ * Explaination : V imp question! Link : https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/
+ * Complexity : Time : O(nlogn), Complexity : O(n)
+**/
+
+
+/**
  * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;
@@ -7,6 +16,7 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+ 
 class VerticalPrinting {
     List<Location> al;
     public List<List<Integer>> verticalTraversal(TreeNode root) {
