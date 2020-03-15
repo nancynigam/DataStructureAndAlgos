@@ -3,7 +3,7 @@
  * @author Nancy Nigam
  * Question : Vertical Printing of Trees
  * Explaination : V imp question! Link : https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/
- * Complexity : Time : O(nlogn), Complexity : O(n)
+ * Complexity : Time : O(nlogn), Space : O(n)
 **/
 
 
