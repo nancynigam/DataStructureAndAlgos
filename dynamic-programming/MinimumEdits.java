@@ -26,9 +26,9 @@ public class MinimumEdits{
 			return 0;
 		int[][] T = new int[n+1][m+1];
 		for(int i=0;i<=n;i++)
-			T[i][0]=0;
+			T[i][0]=i;
 		for(int i=0;i<=m;i++)
-			T[0][i]=0;
+			T[0][i]=i;
 
 		for(int i=1;i<=n;i++){
 			for(int j=1;j<=m;j++){
